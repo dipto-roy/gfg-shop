@@ -15,4 +15,12 @@ export class MiduService {
     {
         return 'midu is the best'+id;
     }
+
+    getSimpleUser(id: number) {
+        return {
+            id: 1,
+            name: 'John Doe',
+            email: 'john.doe@example.com'
+        }
+    }
 }

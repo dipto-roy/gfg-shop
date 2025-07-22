@@ -10,9 +10,15 @@ export class MiduController {
         return this.miduservice.addmidu();
     }
 
+    @Post('create')
+    createSimpleUser(@Body() user: { id: number; name: string; email: string }) {
+        return this.miduservice.getSimpleUser(user.id);
+    }
+
     @Get(':id')
-    getmidubyid(@Param('id') id: number){
-        return this.miduservice.getmidubyid(id);
+    getmidubyid(@Param('id') id: string){
+        const miduId = +id; // Convert string to number
+        return this.miduservice.getmidubyid(miduId);
     }
 
 }
