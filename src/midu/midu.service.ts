@@ -16,11 +16,13 @@ export class MiduService {
         return 'midu is the best'+id;
     }
 
-    getSimpleUser(id: number) {
+    getSimpleUser(user: { id: number; name: string; email: string }) {
         return {
-            id: 1,
-            name: 'John Doe',
-            email: 'john.doe@example.com'
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            message: 'User created successfully',
+            createdAt: new Date()
         }
     }
 }

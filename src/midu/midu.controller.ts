@@ -12,7 +12,7 @@ export class MiduController {
 
     @Post('create')
     createSimpleUser(@Body() user: { id: number; name: string; email: string }) {
-        return this.miduservice.getSimpleUser(user.id);
+        return this.miduservice.getSimpleUser(user); // Pass entire user object
     }
 
     @Get(':id')
