@@ -10,6 +10,12 @@ export class MiduController {
         return this.miduservice.addmidu();
     }
 
+    @Delete(':id')
+    deleteUser(@Param('id') id: string) {
+        const miduId = +id; // Convert string to number
+        return this.miduservice.deleteUser(miduId);
+    }
+
     @Post('create')
     createSimpleUser(@Body() user: { id: number; name: string; email: string }) {
         return this.miduservice.getSimpleUser(user); // Pass entire user object

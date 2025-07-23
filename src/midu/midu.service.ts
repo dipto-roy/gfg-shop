@@ -25,4 +25,10 @@ export class MiduService {
             createdAt: new Date()
         }
     }
+    deleteUser(id: number) {
+        return {
+            message: `User with id ${id} deleted successfully`,
+            deletedAt: new Date()
+        }
+    }
 }
